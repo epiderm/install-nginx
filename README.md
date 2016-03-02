@@ -2,9 +2,19 @@
 
 This script downloads and installs nginx with ngx-pagespeed plugin.
 
-## Prerequisites 
+## Prerequisites
 
-This script uses *wget*, *unzip*, *make* commands and *gcc* compiler.
+This script uses *wget*, *unzip*, *make* commands and *gcc* and *g++* compiler.
+
+Nginx also uses 
+- pcre library :
+        
+      apt-get install libpcre3 libpcre3-dev
+
+- zlib library :
+       
+      apt-get install zlibc zlib1g zlib1g-dev
+
 You have to install them if they are missing.
 
 ## Command
@@ -12,8 +22,7 @@ You have to install them if they are missing.
      ./install-nginx.sh
 
 
-## Next steps 
+## Next steps
 
 Nginx configuration (see /etc/nginx/nginx.conf)
-
 
