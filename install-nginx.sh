@@ -1,5 +1,5 @@
 cd
-NPS_VERSION=1.10.33.5
+NPS_VERSION=1.10.33.6
 wget https://github.com/pagespeed/ngx_pagespeed/archive/release-${NPS_VERSION}-beta.zip -O release-${NPS_VERSION}-beta.zip
 unzip release-${NPS_VERSION}-beta.zip
 cd ngx_pagespeed-release-${NPS_VERSION}-beta/
@@ -17,9 +17,8 @@ cd nginx-${NGINX_VERSION}/
 ./configure --add-module=$HOME/ngx_pagespeed-release-${NPS_VERSION}-beta \
   --prefix=/usr/local/share/nginx --conf-path=/etc/nginx/nginx.conf \
   --sbin-path=/usr/local/sbin --error-log-path=/var/log/nginx/error.log \
-  --http-log-path=/var/log/nginx/access.log
+  --http-log-path=/var/log/nginx/access.log \
+  --with-http_stub_status_module --with-http_ssl_module --with-http_v2_module
 
 make
 sudo make install
-
-
